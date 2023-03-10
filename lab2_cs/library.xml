@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<library xmlns="http://example.org/jk/library">
+	<book title="1984" year="1950" language="PL">
+    <authorr id="orw"/>
+    <authorr id="thc"/>
+	</book>
+
+	<book title="Bible" year="1990" language="EN">
+		<authorr id="thc"/>
+    <authorr id="cel"/>
+    <authorr id="rlr"/>
+	</book>
+
+  <author id="orw">
+    <name>George</name>
+    <surname>Orwell</surname>
+  </author>
+
+	<author id="thc">
+		<name>Thomas</name>
+		<name>H.</name>
+		<surname>Cormen</surname>
+	</author>
+
+  <author id ="cel">
+    <name>Charles</name>
+    <name>Eric</name>
+    <surname>Leiserson</surname>
+  </author>
+  
+  <author id ="rlr">
+    <name>Ronald</name>
+    <name>Linn</name>
+    <surname>Rivest</surname>
+  </author>
+
+	<!--<book>
+		<author>
+			<name>
+				
+			</name>
+			<asd>
+				
+			</asd>
+			<surname>
+				
+			</surname>
+		</author>
+	</book>-->
+	
+</library>
