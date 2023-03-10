@@ -17,26 +17,48 @@
 		</xs:keyref>
 	</xs:element>
 	
+  <!-- Definicja typu biblioteki -->
 	<xs:complexType name="typeLib">
 		<xs:sequence>
 			<xs:element name="book" minOccurs="0" maxOccurs="unbounded" type="lib:typeBook"/>
+      <xs:element name="magazine" minOccurs="0" maxOccurs="unbounded" type="lib:typeMag"/>
 			<xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="lib:typeAuthor"/>
 		</xs:sequence>
 	</xs:complexType>
 
-	<xs:complexType name="typeBook">
+  <!-- Definicja typu bazowego dla książki i magazynu -->
+	<xs:complexType name="typeBase">
 		<xs:sequence>
       <xs:element name="authorr" minOccurs="1" maxOccurs="unbounded" type="lib:typeAuthorRef"/>
 		</xs:sequence>
 		<xs:attribute name="title" type="lib:typeTitle" use="required"/>
 		<xs:attribute name="year" type="lib:typeYear" use="required"/>
-		<xs:attribute name="language" type="lib:typeLanguage" use="required"/>
 	</xs:complexType>
 
+  <!-- Definicja typu książki -->
+  <xs:complexType name="typeBook">
+    <xs:complexContent>
+      <xs:extension base="lib:typeBase">
+        <xs:attribute name="language" type="lib:typeLanguage" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Definicja magazynu -->
+  <xs:complexType name="typeMag">
+    <xs:complexContent>
+      <xs:extension base="lib:typeBase">
+        <xs:attribute name="number" type="xs:int" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <!-- Definicja referencji do autora (jest elementem książki/magazynu)-->
   <xs:complexType name="typeAuthorRef">
     <xs:attribute name="id" type="xs:string" use="required"/>
   </xs:complexType>
 
+  <!-- Definicja właściwego typu autora -->
 	<xs:complexType name="typeAuthor">
 		<xs:sequence>
 			<xs:element name="name" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
@@ -45,6 +67,7 @@
 		<xs:attribute name="id" type="xs:string"/>
 	</xs:complexType>
 
+  <!-- Definicje typów bazujących na podstawowych -->
 	<xs:simpleType name="typeTitle">
 		<xs:restriction base="xs:string">
 			<xs:minLength value="3"/>

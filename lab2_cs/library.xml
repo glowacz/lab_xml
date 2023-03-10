@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <library xmlns="http://example.org/jk/library">
-	<book title="1984" year="1950" language="PL">
+	
+  <book title="1984" year="1950" language="PL">
     <authorr id="orw"/>
     <authorr id="thc"/>
 	</book>
@@ -10,6 +11,10 @@
     <authorr id="cel"/>
     <authorr id="rlr"/>
 	</book>
+
+  <magazine number="34" title="Playboy" year="1900">
+    <authorr id="thc"/>
+  </magazine>
 
   <author id="orw">
     <name>George</name>
@@ -33,19 +38,5 @@
     <name>Linn</name>
     <surname>Rivest</surname>
   </author>
-
-	<!--<book>
-		<author>
-			<name>
-				
-			</name>
-			<asd>
-				
-			</asd>
-			<surname>
-				
-			</surname>
-		</author>
-	</book>-->
 	
 </library>
