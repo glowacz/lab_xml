@@ -46,14 +46,13 @@ namespace ClassLibrary1
             while (reader.Read()) { }
 
             XmlSerializer serializer = new XmlSerializer(typeof(typeLib));
-             typeLib lib;
+            typeLib lib;
             using (reader = XmlReader.Create(path))
             {
                 lib = (typeLib)serializer.Deserialize(reader);
             }
             return lib;
         }
-
         private static void ValidationHandler(Object sender, ValidationEventArgs args)
         {
             if (args.Severity == XmlSeverityType.Warning)
