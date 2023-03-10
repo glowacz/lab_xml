@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <library xmlns="http://example.org/jk/library">
-	
   <book title="1984" year="1950" language="PL">
     <authorr id="orw"/>
     <authorr id="thc"/>
